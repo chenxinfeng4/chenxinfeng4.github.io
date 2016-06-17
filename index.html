@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>TDMS文件转化为MAT</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="i5jb" id="tdms文件转化为mat">TDMS文件转化为MAT</h1><hr><p data-anchor-id="9dck"><code>资料整理</code> <strong>2016-6-6 陈昕枫</strong></p><div class="md-section-divider"></div><h2 data-anchor-id="3zij" id="资源下载">资源下载</h2><hr><p data-anchor-id="kdab"><a href="http://www.mathworks.com/matlabcentral/fileexchange/44206-converttdms--v10-" target="_blank"><strong>ConvertTDMS</strong></a>是<strong>Matlab</strong>®社区开发的，用于转化<strong>LabVIEW</strong>®的采样数据文件（<strong>*.tdms</strong>）到<strong>Matlab</strong>的数据文件（<strong>*.mat</strong>）。 <br>
+这是它的<strong>介绍</strong>。 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/s5umzt66vn8y8p2zic46pkny/image_1akid2eie1tv31qlqgkc85s12om9.png" alt="image_1akid2eie1tv31qlqgkc85s12om9.png-25.6kB"></p><p align="center" data-anchor-id="7ec3"><strong>图 :</strong> Matlab社区的简介</p><p data-anchor-id="w6y0">这是它的<a href="https://github.com/humphreysb/ConvertTDMS" target="_blank">GitHub下载地址</a>。 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/xzih98yrtuaq676e5pum9f9s/image_1akid3prk13tq1d8tbjee8o98lm.png" alt="image_1akid3prk13tq1d8tbjee8o98lm.png-41.7kB" title=""></p><p align="center" data-anchor-id="xyqn"><strong>图 :</strong> 在GitHub中的资源</p><p data-anchor-id="uwsc">额外下载<a href="https://decibel.ni.com/content/docs/DOC-32817" target="_blank">TDMS预处理包</a>（<strong>LabVIEW 2012</strong>）。 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/n4mxxjgalt4x85gqjmcjowom/image_1akidg47d1ik115og1ho31ha6pa11g.png" alt="image_1akidg47d1ik115og1ho31ha6pa11g.png-31.6kB" title=""></p><p align="center" data-anchor-id="ukmj"><strong>图 :</strong> 在LabView社区中的资源</p><div class="md-section-divider"></div><h2 data-anchor-id="etum" id="运行指南">运行指南</h2><hr><ol data-anchor-id="dtob">
+<li><p>运行<strong>TDMS预处理包</strong></p>
+
+<ul><li>运行程序<code>ConvertTdmsFileToNoDaqMxRaw.vi</code>，载入<strong>rowData.tdms</strong>，导出为<strong>newData.tdms</strong>。</li>
+<li>文件（<strong>*.tdms_index</strong>）都可以忽略。 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/9w981eok7cgnbjf0fw6tpaax/image_1akidp01tsietua1l1thso13dj1t.png" alt="image_1akidp01tsietua1l1thso13dj1t.png-80.1kB"> <br>
+<p align="center"><strong>图 :</strong> LabView程序界面</p></li>
+<li>导出数据的文件 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/2a7gjkxkcw1rbqb19p6e0ml8/image_1akie3rsk13sfe5lq4l9v8j62a.png" alt="image_1akie3rsk13sfe5lq4l9v8j62a.png-9.9kB" title=""> <br>
+<p align="center"><strong>图 :</strong> 转化前 (rowData) 与转化后 (newData) 的文件</p> <br>
+</li></ul></li>
+<li><p>运行<strong>Matlab转化包</strong></p>
+
+<ul><li>运行代码<code>simpleConvertTDMS.m</code>，选择<strong>newData.tdms</strong>。</li>
+<li><p>选择<strong>oldData.tdms</strong>则会报错，请执行上述的转化。 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/v2u6h43ldvgu3kaux6lx1kmk/image_1akidaiot11fs1aan1u5b43u1jkd13.png" alt="image_1akidaiot11fs1aan1u5b43u1jkd13.png-17.6kB"></p>
+
+<p align="center"><strong>图 :</strong> 程序文件包</p>
+
+<p><img src="http://static.zybuluo.com/chenxinfeng/sojsv7ngginn9eiu4ef16ue7/image_1akie9b82a1jtvco75ob3isv2n.png" alt="image_1akie9b82a1jtvco75ob3isv2n.png-24.4kB" title=""></p>
+
+<p align="center"><strong>图 :</strong> 载入 (rowData) 将报错</p>
+
+<p><img src="http://static.zybuluo.com/chenxinfeng/e2vcb2k7loy9fn60ft0fyimz/image_1akied5c5plh1c7q1igq8ur1i1134.png" alt="image_1akied5c5plh1c7q1igq8ur1i1134.png-14.7kB" title=""></p>
+
+<p align="center"><strong>图 :</strong> 载入 (newData) 正确</p></li>
+<li><p>导出数据的文件 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/o87wnva7an72jafnifpx26b5/image_1akier2d7k32pg6145g1bgvsov3h.png" alt="image_1akier2d7k32pg6145g1bgvsov3h.png-13.8kB" title=""></p>
+
+<p align="center"><strong>图 :</strong> 生成的数据文件</p></li></ul></li>
+<li><p><strong>MAT</strong>文件内容</p>
+
+<ul><li><p>数据总览 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/ovpgvgi9eit7d0dtwds6s9rb/image_1akif23hc95013dsm6rdool613u.png" alt="image_1akif23hc95013dsm6rdool613u.png-15.8kB" title=""></p></li>
+<li><p>查看通道的<strong>wave</strong> <br>
+<img src="http://static.zybuluo.com/chenxinfeng/js1vl2xg36llrlkpukhret8h/image_1akif4o2fo35eec1vkq1m3vj8b4b.png" alt="image_1akif4o2fo35eec1vkq1m3vj8b4b.png-11.8kB" title=""></p></li>
+<li><p>查看通道的<strong>采样率</strong>，每个通道<strong>可以</strong>拥有各异的采样率 <br>
+<img src="http://static.zybuluo.com/chenxinfeng/lxftl5gshpiirlr0wdbt8uef/image_1akif8trh19nuhec1sso157ga4i4o.png" alt="image_1akif8trh19nuhec1sso157ga4i4o.png-17kB" title=""></p></li></ul></li>
+</ol></div>
+</body>
+</html>
