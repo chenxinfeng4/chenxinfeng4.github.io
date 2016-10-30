@@ -1,31 +1,99 @@
 ﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Sequences sunburst</title>
-    <script src="//d3js.org/d3.v3.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
-    <link rel="stylesheet" type="text/css" href="sequences.css"/>
-  </head>
-  <body>
-    <div id="main">
-      <div id="sequence"></div>
-      <div id="chart">
-        <div id="explanation" style="visibility: hidden;">
-          <span id="percentage"></span><br/>
-          of visits begin with this sequence of pages
-        </div>
-      </div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1000">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@mbostock">
+<meta property="og:url" content="http://bl.ocks.org/kerryrodden/7090426">
+<meta property="og:title" content="Sequences sunburst">
+<meta property="og:description" content="Kerry Rodden’s Block 7090426">
+<meta property="og:image" content="http://bl.ocks.org/kerryrodden/raw/7090426/8fce22c9e21711c757ee8a0df7dba5a42dea0d9c/thumbnail.png">
+<title>Sequences sunburst - bl.ocks.org</title>
+<link rel="icon" href="/favicon.png">
+<style>
+
+@import url("/style.css");
+
+</style>
+
+<header>
+  <div class="column">
+    <div class="navigation">
+      <a href="/">Popular</a>
+      / <a href="/-/about">About</a>
     </div>
-    <div id="sidebar">
-      <input type="checkbox" id="togglelegend"> Legend<br/>
-      <div id="legend" style="visibility: hidden;"></div>
+    <a class="user" href="/kerryrodden"><img class="avatar" src="https://avatars.githubusercontent.com/u/4554164?v=3&amp;s=60" width="30" height="30">Kerry Rodden</a>’s
+    Block <a class="gist gist-id self" title="View Gist on GitHub." href="https://gist.github.com/kerryrodden/7090426">7090426</a>    <div class="date">Updated October 26, 2016</div>
+  </div>
+</header>
+
+<div class="column">
+  <h1>Sequences sunburst</h1>
+  <div class="index">
+    <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src="/kerryrodden/raw/7090426/8fce22c9e21711c757ee8a0df7dba5a42dea0d9c/" marginwidth="0" marginheight="0" style="height:500px;" scrolling="no"></iframe>
+  </div>
+  <div class="index-pop">
+    <a target="_blank" title="Open Block 7090426 a new window." href="/kerryrodden/raw/7090426">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
+  </div>
+  <div class="gist-readme" data-key="README.md"></div>
+  <div class="gist-sources">
+    <div class="gist-source" data-key="index.html">
+      <h2>index.html<a name="index.html" class="anchor" href="#index.html">#</a></h2>
+      <pre><code>…</code></pre>
     </div>
-    <script type="text/javascript" src="sequences.js"></script>
-    <script type="text/javascript">
-      // Hack to make this example display correctly in an iframe on bl.ocks.org
-      d3.select(self.frameElement).style("height", "700px");
-  </script> 
-  </body>
-</html>
+    <div class="gist-source" data-key="sequences.css">
+      <h2>sequences.css<a name="sequences.css" class="anchor" href="#sequences.css">#</a></h2>
+      <pre><code>…</code></pre>
+    </div>
+    <div class="gist-source" data-key="sequences.js">
+      <h2>sequences.js<a name="sequences.js" class="anchor" href="#sequences.js">#</a></h2>
+      <pre><code>…</code></pre>
+    </div>
+  </div>
+  <div class="gist-license gist-source" data-key="LICENSE">
+    <h2>LICENSE<a name="license" class="anchor" href="#license">#</a></h2>
+    <pre><code>…</code></pre>
+  </div>
+</div>
+
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="/highlight.min.js"></script>
+<script>
+
+var gist = {"public":true,"sha":"8fce22c9e21711c757ee8a0df7dba5a42dea0d9c","files":{"LICENSE":{"language":"Text","type":"text/plain","filename":"LICENSE","size":572,"sha":"814907ea0438b2a2118a9a791aa8b68c8d0346ef"},"README.md":{"language":"Markdown","type":"text/plain","filename":"README.md","size":2479,"sha":"4b9b842820def80fe442bbf5993d5ebcdc4790ef"},"index.html":{"language":"HTML","type":"text/html","filename":"index.html","size":1046,"sha":"d89dd9548d71794014fc7bbd2911f6fecde92c86"},"sequences.css":{"language":"CSS","type":"text/css","filename":"sequences.css","size":649,"sha":"dd489d2e2ee7129235c4d2ecd49104be2701b5f6"},"sequences.js":{"language":"JavaScript","type":"application/javascript","filename":"sequences.js","size":8952,"sha":"03b2ac5578c54e8014f55b6e3e035b2fe1033830"},"thumbnail.gif":{"language":null,"type":"image/gif","filename":"thumbnail.gif","size":240900,"sha":"66e9ce05ea907b3cb6b753cacc61aba45a78e21f"},"thumbnail.png":{"language":null,"type":"image/png","filename":"thumbnail.png","size":79698,"sha":"0ef356f60e20f70f424195a693739dfc74c42ad7"},"visit-sequences.csv":{"language":"CSV","type":"text/csv","filename":"visit-sequences.csv","size":587298,"sha":"baee008554fa19e569e5a1a10fdf0a294499d7e0"}},"created_at":"2013-10-21T20:28:33Z","updated_at":"2016-10-26T11:25:26Z","description":"Sequences sunburst","owner":{"login":"kerryrodden"},"id":"7090426"};
+
+var files = d3.values(gist.files);
+
+d3.select(".gist-readme")
+    .data(files, function(d) { return d ? d.filename : this.getAttribute("data-key"); })
+    .each(function(d) {
+      var readme = d3.select(this);
+      d3.text("/kerryrodden/raw/7090426/8fce22c9e21711c757ee8a0df7dba5a42dea0d9c/" + d.filename, function(error, content) {
+        if (error) content = "Sorry, an error occurred.";
+        readme.html(new Showdown.converter().makeHtml(content));
+        readme.selectAll("code").each(function() { hljs.highlightBlock(this); });
+      });
+    });
+
+d3.selectAll(".gist-source")
+    .data(files, function(d) { return d ? d.filename : this.getAttribute("data-key"); })
+  .select("code")
+    .attr("class", function(d) { return d.language && (d.language === "JSON" ? "javascript" : d.language.toLowerCase()); })
+    .each(function(d) {
+      var code = d3.select(this);
+      d3.text("/kerryrodden/raw/7090426/8fce22c9e21711c757ee8a0df7dba5a42dea0d9c/" + (d.filename === "index.html" ? "" : d.filename), function(error, content) {
+        if (error) content = "Sorry, an error occurred.";
+        code.text(content);
+        hljs.highlightBlock(code.node());
+      });
+    });
+
+</script>
+
+<script>
+
+GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
+ga("create", "UA-48272912-1", "auto");
+ga("send", "pageview");
+
+</script>
+<script async src="//www.google-analytics.com/analytics.js"></script>
