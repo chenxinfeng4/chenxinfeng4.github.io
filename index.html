@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
-<meta charset="utf-8">
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://bl.ocks.org/kerryrodden/7090426 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=1000">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@mbostock">
@@ -8,20 +9,20 @@
 <meta property="og:description" content="Kerry Rodden’s Block 7090426">
 <meta property="og:image" content="http://bl.ocks.org/kerryrodden/raw/7090426/8fce22c9e21711c757ee8a0df7dba5a42dea0d9c/thumbnail.png">
 <title>Sequences sunburst - bl.ocks.org</title>
-<link rel="icon" href="/favicon.png">
+<link rel="icon" href="http://bl.ocks.org/favicon.png">
 <style>
 
 @import url("/style.css");
 
 </style>
 
-<header>
+</head><body><header>
   <div class="column">
     <div class="navigation">
-      <a href="/">Popular</a>
-      / <a href="/-/about">About</a>
+      <a href="http://bl.ocks.org/">Popular</a>
+      / <a href="http://bl.ocks.org/-/about">About</a>
     </div>
-    <a class="user" href="/kerryrodden"><img class="avatar" src="https://avatars.githubusercontent.com/u/4554164?v=3&amp;s=60" width="30" height="30">Kerry Rodden</a>’s
+    <a class="user" href="http://bl.ocks.org/kerryrodden"><img class="avatar" src="./index_files/4554164" width="30" height="30">Kerry Rodden</a>’s
     Block <a class="gist gist-id self" title="View Gist on GitHub." href="https://gist.github.com/kerryrodden/7090426">7090426</a>    <div class="date">Updated October 26, 2016</div>
   </div>
 </header>
@@ -29,34 +30,461 @@
 <div class="column">
   <h1>Sequences sunburst</h1>
   <div class="index">
-    <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src="/kerryrodden/raw/7090426/8fce22c9e21711c757ee8a0df7dba5a42dea0d9c/" marginwidth="0" marginheight="0" style="height:500px;" scrolling="no"></iframe>
+    <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src="./index_files/saved_resource.html" marginwidth="0" marginheight="0" style="height: 700px;" scrolling="no"></iframe>
   </div>
   <div class="index-pop">
-    <a target="_blank" title="Open Block 7090426 a new window." href="/kerryrodden/raw/7090426">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
+    <a target="_blank" title="Open Block 7090426 a new window." href="http://bl.ocks.org/kerryrodden/raw/7090426">Open<svg height="16" width="12"><path d="M11 10h1v3c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3v1H1v10h10V10zM6 2l2.25 2.25-3.25 3.25 1.5 1.5 3.25-3.25 2.25 2.25V2H6z"></path></svg></a>
   </div>
-  <div class="gist-readme" data-key="README.md"></div>
+  <div class="gist-readme" data-key="README.md"><p>This example shows how it is possible to use a <a href="http://bl.ocks.org/mbostock/4063423">D3 sunburst visualization</a> (partition layout) with data that describes sequences of events.</p>
+
+<p>A good use case is to summarize navigation paths through a web site, as in the sample synthetic data file (visit_sequences.csv). The visualization makes it easy to understand visits that start directly on a product page (e.g. after landing there from a search engine), compared to visits where users arrive on the site's home page and navigate from there. Where a funnel lets you understand a single pre-selected path, this allows you to see all possible paths.</p>
+
+<p>Features:</p>
+
+<ul>
+<li>works with data that is in a CSV format (you don't need to pre-generate a hierarchical JSON file, unless your data file is very large) </li>
+<li>interactive breadcrumb trail helps to emphasize the sequence, so that it is easy for a first-time user to understand what they are seeing</li>
+<li>percentages are shown explicitly, to help overcome the distortion of the data that occurs when using a radial presentation</li>
+</ul>
+
+<p>If you want to simply reuse this with your own data, here are some tips for generating the CSV file:</p>
+
+<ul>
+<li>no header is required (but it's OK if one is present)</li>
+<li>use a hyphen to separate the steps in the sequence</li>
+<li>the step names should be one word only, and ideally should be kept short. Non-alphanumeric characters will probably cause problems (I haven't tested this).</li>
+<li>every sequence should have an "end" marker as the last element, <em>unless</em> it has been truncated because it is longer than the maximum sequence length (6, in the example). The purpose of the "end" marker is to distinguish a true end point (e.g. the user left the site) from an end point that has been forced by truncation.</li>
+<li>each line should be a complete path from root to leaf - don't include counts for intermediate steps. For example, include "home-search-end" and "home-search-product-end" but not "home-search" - the latter is computed by the partition layout, by adding up the counts of all the sequences with that prefix.</li>
+<li>to keep the number of permutations low, use a small number of unique step names, and a small maximum sequence length. Larger numbers of either of these will lead to a very large CSV that will be slow to process (and therefore require pre-processing into hierarchical JSON).</li>
+</ul>
+
+<p>I created this example in my work at Google, but it is not part of any Google product. It is covered by the Apache license (see the LICENSE file).</p></div>
   <div class="gist-sources">
     <div class="gist-source" data-key="index.html">
-      <h2>index.html<a name="index.html" class="anchor" href="#index.html">#</a></h2>
-      <pre><code>…</code></pre>
+      <h2>index.html<a name="index.html" class="anchor" href="http://bl.ocks.org/kerryrodden/7090426#index.html">#</a></h2>
+      <pre><code class="html xml"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Sequences sunburst<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>
+      <span class="attribute">href</span>=<span class="value">"https://fonts.googleapis.com/css?family=Open+Sans:400,600"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"sequences.css"</span>/&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"sequence"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"chart"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"explanation"</span> <span class="attribute">style</span>=<span class="value">"visibility: hidden;"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"percentage"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>/&gt;</span>
+          of visits begin with this sequence of pages
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"sidebar"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">id</span>=<span class="value">"togglelegend"</span>&gt;</span> Legend<span class="tag">&lt;<span class="title">br</span>/&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"legend"</span> <span class="attribute">style</span>=<span class="value">"visibility: hidden;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"sequences.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="comment">// Hack to make this example display correctly in an iframe on bl.ocks.org</span>
+      d3.select(self.frameElement).style(<span class="string">"height"</span>, <span class="string">"700px"</span>);
+  </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span> 
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre>
     </div>
     <div class="gist-source" data-key="sequences.css">
-      <h2>sequences.css<a name="sequences.css" class="anchor" href="#sequences.css">#</a></h2>
-      <pre><code>…</code></pre>
+      <h2>sequences.css<a name="sequences.css" class="anchor" href="http://bl.ocks.org/kerryrodden/7090426#sequences.css">#</a></h2>
+      <pre><code class="css"><span class="tag">body</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">'Open Sans'</span>, sans-serif</span>;</span>
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12</span>px</span>;</span>
+  <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> <span class="number">400</span></span>;</span>
+  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#fff</span></span>;</span>
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">960</span>px</span>;</span>
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">700</span>px</span>;</span>
+  <span class="rule"><span class="attribute">margin-top</span>:<span class="value"> <span class="number">10</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#main</span> <span class="rules">{
+  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span>;</span>
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">750</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#sidebar</span> <span class="rules">{
+  <span class="rule"><span class="attribute">float</span>:<span class="value"> right</span>;</span>
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#sequence</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">600</span>px</span>;</span>
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">70</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#legend</span> <span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">3</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#sequence</span> <span class="tag">text</span>, <span class="id">#legend</span> <span class="tag">text</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> <span class="number">600</span></span>;</span>
+  <span class="rule"><span class="attribute">fill</span>:<span class="value"> <span class="hexcolor">#fff</span></span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#chart</span> <span class="rules">{
+  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#chart</span> <span class="tag">path</span> <span class="rules">{
+  <span class="rule"><span class="attribute">stroke</span>:<span class="value"> <span class="hexcolor">#fff</span></span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#explanation</span> <span class="rules">{
+  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span>;</span>
+  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">260</span>px</span>;</span>
+  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">305</span>px</span>;</span>
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">140</span>px</span>;</span>
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span>;</span>
+  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#666</span></span>;</span>
+  <span class="rule"><span class="attribute">z-index</span>:<span class="value"> -<span class="number">1</span></span>;</span>
+<span class="rule">}</span></span>
+
+<span class="id">#percentage</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">2.5</span>em</span>;</span>
+<span class="rule">}</span></span>
+</code></pre>
     </div>
     <div class="gist-source" data-key="sequences.js">
-      <h2>sequences.js<a name="sequences.js" class="anchor" href="#sequences.js">#</a></h2>
-      <pre><code>…</code></pre>
+      <h2>sequences.js<a name="sequences.js" class="anchor" href="http://bl.ocks.org/kerryrodden/7090426#sequences.js">#</a></h2>
+      <pre><code class="javascript"><span class="comment">// Dimensions of sunburst.</span>
+<span class="keyword">var</span> width = <span class="number">750</span>;
+<span class="keyword">var</span> height = <span class="number">600</span>;
+<span class="keyword">var</span> radius = Math.min(width, height) / <span class="number">2</span>;
+
+<span class="comment">// Breadcrumb dimensions: width, height, spacing, width of tip/tail.</span>
+<span class="keyword">var</span> b = {
+  w: <span class="number">75</span>, h: <span class="number">30</span>, s: <span class="number">3</span>, t: <span class="number">10</span>
+};
+
+<span class="comment">// Mapping of step names to colors.</span>
+<span class="keyword">var</span> colors = {
+  <span class="string">"home"</span>: <span class="string">"#5687d1"</span>,
+  <span class="string">"product"</span>: <span class="string">"#7b615c"</span>,
+  <span class="string">"search"</span>: <span class="string">"#de783b"</span>,
+  <span class="string">"account"</span>: <span class="string">"#6ab975"</span>,
+  <span class="string">"other"</span>: <span class="string">"#a173d1"</span>,
+  <span class="string">"end"</span>: <span class="string">"#bbbbbb"</span>
+};
+
+<span class="comment">// Total size of all segments; we set this later, after loading the data.</span>
+<span class="keyword">var</span> totalSize = <span class="number">0</span>; 
+
+<span class="keyword">var</span> vis = d3.select(<span class="string">"#chart"</span>).append(<span class="string">"svg:svg"</span>)
+    .attr(<span class="string">"width"</span>, width)
+    .attr(<span class="string">"height"</span>, height)
+    .append(<span class="string">"svg:g"</span>)
+    .attr(<span class="string">"id"</span>, <span class="string">"container"</span>)
+    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + width / <span class="number">2</span> + <span class="string">","</span> + height / <span class="number">2</span> + <span class="string">")"</span>);
+
+<span class="keyword">var</span> partition = d3.layout.partition()
+    .size([<span class="number">2</span> * Math.PI, radius * radius])
+    .value(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.size; });
+
+<span class="keyword">var</span> arc = d3.svg.arc()
+    .startAngle(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.x; })
+    .endAngle(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.x + d.dx; })
+    .innerRadius(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> Math.sqrt(d.y); })
+    .outerRadius(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> Math.sqrt(d.y + d.dy); });
+
+<span class="comment">// Use d3.text and d3.csv.parseRows so that we do not need to have a header</span>
+<span class="comment">// row, and can receive the csv as an array of arrays.</span>
+d3.text(<span class="string">"visit-sequences.csv"</span>, <span class="function"><span class="keyword">function</span><span class="params">(text)</span> {</span>
+  <span class="keyword">var</span> csv = d3.csv.parseRows(text);
+  <span class="keyword">var</span> json = buildHierarchy(csv);
+  createVisualization(json);
+});
+
+<span class="comment">// Main function to draw and set up the visualization, once we have the data.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">createVisualization</span><span class="params">(json)</span> {</span>
+
+  <span class="comment">// Basic setup of page elements.</span>
+  initializeBreadcrumbTrail();
+  drawLegend();
+  d3.select(<span class="string">"#togglelegend"</span>).on(<span class="string">"click"</span>, toggleLegend);
+
+  <span class="comment">// Bounding circle underneath the sunburst, to make it easier to detect</span>
+  <span class="comment">// when the mouse leaves the parent g.</span>
+  vis.append(<span class="string">"svg:circle"</span>)
+      .attr(<span class="string">"r"</span>, radius)
+      .style(<span class="string">"opacity"</span>, <span class="number">0</span>);
+
+  <span class="comment">// For efficiency, filter nodes to keep only those large enough to see.</span>
+  <span class="keyword">var</span> nodes = partition.nodes(json)
+      .filter(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span>
+      <span class="keyword">return</span> (d.dx &gt; <span class="number">0.005</span>); <span class="comment">// 0.005 radians = 0.29 degrees</span>
+      });
+
+  <span class="keyword">var</span> path = vis.data([json]).selectAll(<span class="string">"path"</span>)
+      .data(nodes)
+      .enter().append(<span class="string">"svg:path"</span>)
+      .attr(<span class="string">"display"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.depth ? <span class="literal">null</span> : <span class="string">"none"</span>; })
+      .attr(<span class="string">"d"</span>, arc)
+      .attr(<span class="string">"fill-rule"</span>, <span class="string">"evenodd"</span>)
+      .style(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> colors[d.name]; })
+      .style(<span class="string">"opacity"</span>, <span class="number">1</span>)
+      .on(<span class="string">"mouseover"</span>, mouseover);
+
+  <span class="comment">// Add the mouseleave handler to the bounding circle.</span>
+  d3.select(<span class="string">"#container"</span>).on(<span class="string">"mouseleave"</span>, mouseleave);
+
+  <span class="comment">// Get total size of the tree = value of root node from partition.</span>
+  totalSize = path.node().__data__.value;
+ };
+
+<span class="comment">// Fade all but the current sequence, and show it in the breadcrumb trail.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">mouseover</span><span class="params">(d)</span> {</span>
+
+  <span class="keyword">var</span> percentage = (<span class="number">100</span> * d.value / totalSize).toPrecision(<span class="number">3</span>);
+  <span class="keyword">var</span> percentageString = percentage + <span class="string">"%"</span>;
+  <span class="keyword">if</span> (percentage &lt; <span class="number">0.1</span>) {
+    percentageString = <span class="string">"&lt; 0.1%"</span>;
+  }
+
+  d3.select(<span class="string">"#percentage"</span>)
+      .text(percentageString);
+
+  d3.select(<span class="string">"#explanation"</span>)
+      .style(<span class="string">"visibility"</span>, <span class="string">""</span>);
+
+  <span class="keyword">var</span> sequenceArray = getAncestors(d);
+  updateBreadcrumbs(sequenceArray, percentageString);
+
+  <span class="comment">// Fade all the segments.</span>
+  d3.selectAll(<span class="string">"path"</span>)
+      .style(<span class="string">"opacity"</span>, <span class="number">0.3</span>);
+
+  <span class="comment">// Then highlight only those that are an ancestor of the current segment.</span>
+  vis.selectAll(<span class="string">"path"</span>)
+      .filter(<span class="function"><span class="keyword">function</span><span class="params">(node)</span> {</span>
+                <span class="keyword">return</span> (sequenceArray.indexOf(node) &gt;= <span class="number">0</span>);
+              })
+      .style(<span class="string">"opacity"</span>, <span class="number">1</span>);
+}
+
+<span class="comment">// Restore everything to full opacity when moving off the visualization.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">mouseleave</span><span class="params">(d)</span> {</span>
+
+  <span class="comment">// Hide the breadcrumb trail</span>
+  d3.select(<span class="string">"#trail"</span>)
+      .style(<span class="string">"visibility"</span>, <span class="string">"hidden"</span>);
+
+  <span class="comment">// Deactivate all segments during transition.</span>
+  d3.selectAll(<span class="string">"path"</span>).on(<span class="string">"mouseover"</span>, <span class="literal">null</span>);
+
+  <span class="comment">// Transition each segment to full opacity and then reactivate it.</span>
+  d3.selectAll(<span class="string">"path"</span>)
+      .transition()
+      .duration(<span class="number">1000</span>)
+      .style(<span class="string">"opacity"</span>, <span class="number">1</span>)
+      .each(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+              d3.select(<span class="keyword">this</span>).on(<span class="string">"mouseover"</span>, mouseover);
+            });
+
+  d3.select(<span class="string">"#explanation"</span>)
+      .style(<span class="string">"visibility"</span>, <span class="string">"hidden"</span>);
+}
+
+<span class="comment">// Given a node in a partition layout, return an array of all of its ancestor</span>
+<span class="comment">// nodes, highest first, but excluding the root.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">getAncestors</span><span class="params">(node)</span> {</span>
+  <span class="keyword">var</span> path = [];
+  <span class="keyword">var</span> current = node;
+  <span class="keyword">while</span> (current.parent) {
+    path.unshift(current);
+    current = current.parent;
+  }
+  <span class="keyword">return</span> path;
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">initializeBreadcrumbTrail</span><span class="params">()</span> {</span>
+  <span class="comment">// Add the svg area.</span>
+  <span class="keyword">var</span> trail = d3.select(<span class="string">"#sequence"</span>).append(<span class="string">"svg:svg"</span>)
+      .attr(<span class="string">"width"</span>, width)
+      .attr(<span class="string">"height"</span>, <span class="number">50</span>)
+      .attr(<span class="string">"id"</span>, <span class="string">"trail"</span>);
+  <span class="comment">// Add the label at the end, for the percentage.</span>
+  trail.append(<span class="string">"svg:text"</span>)
+    .attr(<span class="string">"id"</span>, <span class="string">"endlabel"</span>)
+    .style(<span class="string">"fill"</span>, <span class="string">"#000"</span>);
+}
+
+<span class="comment">// Generate a string that describes the points of a breadcrumb polygon.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">breadcrumbPoints</span><span class="params">(d, i)</span> {</span>
+  <span class="keyword">var</span> points = [];
+  points.push(<span class="string">"0,0"</span>);
+  points.push(b.w + <span class="string">",0"</span>);
+  points.push(b.w + b.t + <span class="string">","</span> + (b.h / <span class="number">2</span>));
+  points.push(b.w + <span class="string">","</span> + b.h);
+  points.push(<span class="string">"0,"</span> + b.h);
+  <span class="keyword">if</span> (i &gt; <span class="number">0</span>) { <span class="comment">// Leftmost breadcrumb; don't include 6th vertex.</span>
+    points.push(b.t + <span class="string">","</span> + (b.h / <span class="number">2</span>));
+  }
+  <span class="keyword">return</span> points.join(<span class="string">" "</span>);
+}
+
+<span class="comment">// Update the breadcrumb trail to show the current sequence and percentage.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">updateBreadcrumbs</span><span class="params">(nodeArray, percentageString)</span> {</span>
+
+  <span class="comment">// Data join; key function combines name and depth (= position in sequence).</span>
+  <span class="keyword">var</span> g = d3.select(<span class="string">"#trail"</span>)
+      .selectAll(<span class="string">"g"</span>)
+      .data(nodeArray, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.name + d.depth; });
+
+  <span class="comment">// Add breadcrumb and label for entering nodes.</span>
+  <span class="keyword">var</span> entering = g.enter().append(<span class="string">"svg:g"</span>);
+
+  entering.append(<span class="string">"svg:polygon"</span>)
+      .attr(<span class="string">"points"</span>, breadcrumbPoints)
+      .style(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> colors[d.name]; });
+
+  entering.append(<span class="string">"svg:text"</span>)
+      .attr(<span class="string">"x"</span>, (b.w + b.t) / <span class="number">2</span>)
+      .attr(<span class="string">"y"</span>, b.h / <span class="number">2</span>)
+      .attr(<span class="string">"dy"</span>, <span class="string">"0.35em"</span>)
+      .attr(<span class="string">"text-anchor"</span>, <span class="string">"middle"</span>)
+      .text(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.name; });
+
+  <span class="comment">// Set position for entering and updating nodes.</span>
+  g.attr(<span class="string">"transform"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d, i)</span> {</span>
+    <span class="keyword">return</span> <span class="string">"translate("</span> + i * (b.w + b.s) + <span class="string">", 0)"</span>;
+  });
+
+  <span class="comment">// Remove exiting nodes.</span>
+  g.exit().remove();
+
+  <span class="comment">// Now move and update the percentage at the end.</span>
+  d3.select(<span class="string">"#trail"</span>).select(<span class="string">"#endlabel"</span>)
+      .attr(<span class="string">"x"</span>, (nodeArray.length + <span class="number">0.5</span>) * (b.w + b.s))
+      .attr(<span class="string">"y"</span>, b.h / <span class="number">2</span>)
+      .attr(<span class="string">"dy"</span>, <span class="string">"0.35em"</span>)
+      .attr(<span class="string">"text-anchor"</span>, <span class="string">"middle"</span>)
+      .text(percentageString);
+
+  <span class="comment">// Make the breadcrumb trail visible, if it's hidden.</span>
+  d3.select(<span class="string">"#trail"</span>)
+      .style(<span class="string">"visibility"</span>, <span class="string">""</span>);
+
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">drawLegend</span><span class="params">()</span> {</span>
+
+  <span class="comment">// Dimensions of legend item: width, height, spacing, radius of rounded rect.</span>
+  <span class="keyword">var</span> li = {
+    w: <span class="number">75</span>, h: <span class="number">30</span>, s: <span class="number">3</span>, r: <span class="number">3</span>
+  };
+
+  <span class="keyword">var</span> legend = d3.select(<span class="string">"#legend"</span>).append(<span class="string">"svg:svg"</span>)
+      .attr(<span class="string">"width"</span>, li.w)
+      .attr(<span class="string">"height"</span>, d3.keys(colors).length * (li.h + li.s));
+
+  <span class="keyword">var</span> g = legend.selectAll(<span class="string">"g"</span>)
+      .data(d3.entries(colors))
+      .enter().append(<span class="string">"svg:g"</span>)
+      .attr(<span class="string">"transform"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d, i)</span> {</span>
+              <span class="keyword">return</span> <span class="string">"translate(0,"</span> + i * (li.h + li.s) + <span class="string">")"</span>;
+           });
+
+  g.append(<span class="string">"svg:rect"</span>)
+      .attr(<span class="string">"rx"</span>, li.r)
+      .attr(<span class="string">"ry"</span>, li.r)
+      .attr(<span class="string">"width"</span>, li.w)
+      .attr(<span class="string">"height"</span>, li.h)
+      .style(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.value; });
+
+  g.append(<span class="string">"svg:text"</span>)
+      .attr(<span class="string">"x"</span>, li.w / <span class="number">2</span>)
+      .attr(<span class="string">"y"</span>, li.h / <span class="number">2</span>)
+      .attr(<span class="string">"dy"</span>, <span class="string">"0.35em"</span>)
+      .attr(<span class="string">"text-anchor"</span>, <span class="string">"middle"</span>)
+      .text(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.key; });
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">toggleLegend</span><span class="params">()</span> {</span>
+  <span class="keyword">var</span> legend = d3.select(<span class="string">"#legend"</span>);
+  <span class="keyword">if</span> (legend.style(<span class="string">"visibility"</span>) == <span class="string">"hidden"</span>) {
+    legend.style(<span class="string">"visibility"</span>, <span class="string">""</span>);
+  } <span class="keyword">else</span> {
+    legend.style(<span class="string">"visibility"</span>, <span class="string">"hidden"</span>);
+  }
+}
+
+<span class="comment">// Take a 2-column CSV and transform it into a hierarchical structure suitable</span>
+<span class="comment">// for a partition layout. The first column is a sequence of step names, from</span>
+<span class="comment">// root to leaf, separated by hyphens. The second column is a count of how </span>
+<span class="comment">// often that sequence occurred.</span>
+<span class="function"><span class="keyword">function</span> <span class="title">buildHierarchy</span><span class="params">(csv)</span> {</span>
+  <span class="keyword">var</span> root = {<span class="string">"name"</span>: <span class="string">"root"</span>, <span class="string">"children"</span>: []};
+  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; csv.length; i++) {
+    <span class="keyword">var</span> sequence = csv[i][<span class="number">0</span>];
+    <span class="keyword">var</span> size = +csv[i][<span class="number">1</span>];
+    <span class="keyword">if</span> (isNaN(size)) { <span class="comment">// e.g. if this is a header row</span>
+      <span class="keyword">continue</span>;
+    }
+    <span class="keyword">var</span> parts = sequence.split(<span class="string">"-"</span>);
+    <span class="keyword">var</span> currentNode = root;
+    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; parts.length; j++) {
+      <span class="keyword">var</span> children = currentNode[<span class="string">"children"</span>];
+      <span class="keyword">var</span> nodeName = parts[j];
+      <span class="keyword">var</span> childNode;
+      <span class="keyword">if</span> (j + <span class="number">1</span> &lt; parts.length) {
+   <span class="comment">// Not yet at the end of the sequence; move down the tree.</span>
+ 	<span class="keyword">var</span> foundChild = <span class="literal">false</span>;
+ 	<span class="keyword">for</span> (<span class="keyword">var</span> k = <span class="number">0</span>; k &lt; children.length; k++) {
+ 	  <span class="keyword">if</span> (children[k][<span class="string">"name"</span>] == nodeName) {
+ 	    childNode = children[k];
+ 	    foundChild = <span class="literal">true</span>;
+ 	    <span class="keyword">break</span>;
+ 	  }
+ 	}
+  <span class="comment">// If we don't already have a child node for this branch, create it.</span>
+ 	<span class="keyword">if</span> (!foundChild) {
+ 	  childNode = {<span class="string">"name"</span>: nodeName, <span class="string">"children"</span>: []};
+ 	  children.push(childNode);
+ 	}
+ 	currentNode = childNode;
+      } <span class="keyword">else</span> {
+ 	<span class="comment">// Reached the end of the sequence; create a leaf node.</span>
+ 	childNode = {<span class="string">"name"</span>: nodeName, <span class="string">"size"</span>: size};
+ 	children.push(childNode);
+      }
+    }
+  }
+  <span class="keyword">return</span> root;
+};
+</code></pre>
     </div>
   </div>
   <div class="gist-license gist-source" data-key="LICENSE">
-    <h2>LICENSE<a name="license" class="anchor" href="#license">#</a></h2>
-    <pre><code>…</code></pre>
+    <h2>LICENSE<a name="license" class="anchor" href="http://bl.ocks.org/kerryrodden/7090426#license">#</a></h2>
+    <pre><code class="text javascript">Copyright <span class="number">2013</span> Google Inc. All Rights Reserved.
+
+Licensed under the Apache License, Version <span class="number">2.0</span> (the <span class="string">"License"</span>);
+you may not use <span class="keyword">this</span> file except <span class="keyword">in</span> compliance <span class="keyword">with</span> the License.
+You may obtain a copy of the License at
+
+   http:<span class="comment">//www.apache.org/licenses/LICENSE-2.0</span>
+
+Unless required by applicable law or agreed to <span class="keyword">in</span> writing, software
+distributed under the License is distributed on an <span class="string">"AS IS"</span> BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License <span class="keyword">for</span> the specific language governing permissions and
+limitations under the License.
+</code></pre>
   </div>
 </div>
 
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script src="/highlight.min.js"></script>
+<script src="./index_files/d3.v3.min.js.下载"></script>
+<script src="./index_files/highlight.min.js.下载"></script>
 <script>
 
 var gist = {"public":true,"sha":"8fce22c9e21711c757ee8a0df7dba5a42dea0d9c","files":{"LICENSE":{"language":"Text","type":"text/plain","filename":"LICENSE","size":572,"sha":"814907ea0438b2a2118a9a791aa8b68c8d0346ef"},"README.md":{"language":"Markdown","type":"text/plain","filename":"README.md","size":2479,"sha":"4b9b842820def80fe442bbf5993d5ebcdc4790ef"},"index.html":{"language":"HTML","type":"text/html","filename":"index.html","size":1046,"sha":"d89dd9548d71794014fc7bbd2911f6fecde92c86"},"sequences.css":{"language":"CSS","type":"text/css","filename":"sequences.css","size":649,"sha":"dd489d2e2ee7129235c4d2ecd49104be2701b5f6"},"sequences.js":{"language":"JavaScript","type":"application/javascript","filename":"sequences.js","size":8952,"sha":"03b2ac5578c54e8014f55b6e3e035b2fe1033830"},"thumbnail.gif":{"language":null,"type":"image/gif","filename":"thumbnail.gif","size":240900,"sha":"66e9ce05ea907b3cb6b753cacc61aba45a78e21f"},"thumbnail.png":{"language":null,"type":"image/png","filename":"thumbnail.png","size":79698,"sha":"0ef356f60e20f70f424195a693739dfc74c42ad7"},"visit-sequences.csv":{"language":"CSV","type":"text/csv","filename":"visit-sequences.csv","size":587298,"sha":"baee008554fa19e569e5a1a10fdf0a294499d7e0"}},"created_at":"2013-10-21T20:28:33Z","updated_at":"2016-10-26T11:25:26Z","description":"Sequences sunburst","owner":{"login":"kerryrodden"},"id":"7090426"};
@@ -96,4 +524,5 @@ ga("create", "UA-48272912-1", "auto");
 ga("send", "pageview");
 
 </script>
-<script async src="//www.google-analytics.com/analytics.js"></script>
+<script async="" src="./index_files/analytics.js.下载"></script>
+<audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>
