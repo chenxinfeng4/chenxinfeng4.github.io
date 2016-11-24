@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Page Template</title>
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<!-- <script type="text/javascript" src="../d3/d3.v3.js"></script> -->
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Your beautiful D3 code will go here
+			var dataset = [ ["A", 60.8], ["B", 58.4], ["C", 47.3], ["D",46.6]];
+			var pie = d3.layout.pie().value(function(d){return d[1];});
+			var piedata = pie(dataset);
+			console.log (piedata);
+			d3.select("body").append("p").text("hello world");
+        </script>
+    </body>
+</html>
