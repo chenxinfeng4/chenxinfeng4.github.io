@@ -15,10 +15,6 @@
     </head>
     <body>
 	<svg width="300" height="300">
-		 <script type="text/javascript">
-            // Your beautiful D3 code will go here
-			d3.select("body").append("p").text("hello");
-        </script>
 		<g class="arc" transform="translate(150,150)">
 		<path fill="#1f77b4" d="M-41.8894324939245,-144.03220280665343A150,150 0 0,1 -2.7554552980815446e-14,-150L0,0Z"></path>
 		<text transform="translate(-10.578099894368988,-74.25027813163229)" text-anchor="middle">5</text>
