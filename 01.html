@@ -3,17 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>D3 Page Template</title>
-        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<!-- <script type="text/javascript" src="../d3/d3.v3.js"></script> -->
     </head>
     <body>
-        <script type="text/javascript">
-            // Your beautiful D3 code will go here
-			var dataset = [ ["A", 60.8], ["B", 58.4], ["C", 47.3], ["D",46.6]];
-			var pie = d3.layout.pie().value(function(d){return d[1];});
-			var piedata = pie(dataset);
-			console.log (piedata);
-			d3.select("body").append("p").text("hello world");
-        </script>
+        <body>
+	<svg width="300" height="300">
+		<g class="arc" transform="translate(150,150)">
+		<path fill="#1f77b4" d="M-41.8894324939245,-144.03220280665343A150,150 0 0,1 -2.7554552980815446e-14,-150L0,0Z"></path>
+		<text transform="translate(-10.578099894368988,-74.25027813163229)" text-anchor="middle">5</text>
+		</g>
+		<g class="arc" transform="translate(150,150)"><path fill="#ff7f0e" d="M-139.1833540944764,-55.92847166704627A150,150 0 0,1 -87.47945958094097,-121.8496785035829L0,0Z"></path><text transform="translate(-59.01357715286927,-46.28604229810911)" text-anchor="middle">10</text></g><g class="arc" transform="translate(150,150)"><path fill="#2ca02c" d="M-109.75129891525174,102.24799453492992A150,150 0 0,1 -139.1833540944764,-55.92847166704627L0,0Z"></path><text transform="translate(-73.73442883467781,13.71983981042904)" text-anchor="middle">20</text></g><g class="arc" transform="translate(150,150)"><path fill="#d62728" d="M9.184850993605149e-15,-150A150,150 0 0,1 83.99621792063931,124.27644738657631L0,0Z"></path><text transform="translate(71.71250510544382,-21.961707845741277)" text-anchor="middle">45</text></g><g class="arc" transform="translate(150,150)"><path fill="#9467bd" d="M-87.47945958094097,-121.8496785035829A150,150 0 0,1 -41.8894324939245,-144.03220280665343L0,0Z"></path><text transform="translate(-32.814225784267784,-67.44054111718778)" text-anchor="middle">6</text></g><g class="arc" transform="translate(150,150)"><path fill="#8c564b" d="M83.99621792063931,124.27644738657631A150,150 0 0,1 -109.75129891525174,102.24799453492992L0,0Z"></path><text transform="translate(-8.472665357180476,74.51988957147772)" text-anchor="middle">25</text></g></svg>
     </body>
 </html>
