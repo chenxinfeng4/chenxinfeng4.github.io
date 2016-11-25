@@ -1,0 +1,225 @@
+{
+	"name": "root",
+	"children": [
+		{
+			"name": "Cerebral Nuclei",
+			"children": [
+				{
+					"name": "striatum",
+					"children": [
+						{
+							"name": "CeA",
+							"size": 0.8147
+						},
+						{
+							"name": "Mep",
+							"size": 0.9058
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cerebral Cortex",
+			"children": [
+				{
+					"name": "APF",
+					"children": [
+						{
+							"name": "ENT",
+							"size": 3.8824
+						},
+						{
+							"name": "SUB",
+							"size": 0.6305
+						},
+						{
+							"name": "_gap_",
+							"size": 0.6305
+						}
+					]
+				},
+				{
+					"name": "cortical subplate",
+					"size": 5
+				},
+				{
+					"name": "Dlfactory Areas",
+					"children": [
+						{
+							"name": "coA",
+							"size": 1.915
+						},
+						{
+							"name": "DP",
+							"size": 1.0938
+						},
+						{
+							"name": "TR",
+							"size": 1.9298
+						}
+					]
+				},
+				{
+					"name": "Isocortex",
+					"children": [
+						{
+							"name": "AI",
+							"size": 0.557
+						},
+						{
+							"name": "DTT",
+							"size": 0.1951
+						},
+						{
+							"name": "IL",
+							"size": 0.9134
+						},
+						{
+							"name": "MO",
+							"size": 0.6324
+						},
+						{
+							"name": "prl",
+							"size": 0.127
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Brach stem",
+			"children": [
+				{
+					"name": "Hypo-Thalamus",
+					"children": [
+						{
+							"name": "AH",
+							"size": 0.8491
+						},
+						{
+							"name": "ARH",
+							"size": 0.6787
+						},
+						{
+							"name": "LH",
+							"size": 0.0357
+						},
+						{
+							"name": "PH",
+							"size": 0.934
+						},
+						{
+							"name": "PM",
+							"size": 6.0619
+						},
+						{
+							"name": "PMH",
+							"size": 0.1273
+						},
+						{
+							"name": "PSTh",
+							"size": 0.1847
+						},
+						{
+							"name": "PVp",
+							"size": 0.3885
+						},
+						{
+							"name": "RCH",
+							"size": 5.2438
+						},
+						{
+							"name": "SBPV",
+							"size": 5.9451
+						},
+						{
+							"name": "SCH",
+							"size": 3.1378
+						},
+						{
+							"name": "Tu",
+							"size": 1.1077
+						},
+						{
+							"name": "VMH",
+							"size": 2.8242
+						},
+						{
+							"name": "ZI",
+							"size": 0.6557
+						}
+					]
+				},
+				{
+					"name": "MB",
+					"children": [
+						{
+							"name": "DR",
+							"size": 0.6948
+						},
+						{
+							"name": "PAG",
+							"size": 0.3171
+						},
+						{
+							"name": "PPN",
+							"size": 0.8235
+						}
+					]
+				},
+				{
+					"name": "Medulla",
+					"children": [
+						{
+							"name": "My-sat",
+							"size": 2.8242
+						}
+					]
+				},
+				{
+					"name": "Pons",
+					"children": [
+						{
+							"name": "CS",
+							"size": 5.2438
+						},
+						{
+							"name": "PB",
+							"size": 0.0344
+						},
+						{
+							"name": "PCG",
+							"size": 0.9502
+						}
+					]
+				},
+				{
+					"name": "thal",
+					"children": [
+						{
+							"name": "CM",
+							"size": 1.5844
+						},
+						{
+							"name": "IAM",
+							"size": 1.8315
+						},
+						{
+							"name": "PVH",
+							"size": 0.2838
+						},
+						{
+							"name": "PVT",
+							"size": 1.919
+						},
+						{
+							"name": "Re",
+							"size": 0.8435
+						}
+					]
+				}
+			]
+		}
+	]
+}
