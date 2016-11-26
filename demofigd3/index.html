@@ -15,8 +15,9 @@ body {
             width: 400px;
         }
         .caption {
-            fill: blue;
+            fill: black;
 			font-size:25px;
+			font-family: "Verdana";
         }
 </style>
 
@@ -57,12 +58,11 @@ texthint2.append("tspan")
 		.attr("x","50%")
 		.attr("class", "name")
 		.attr("dy", 0)
-		.text("hello");
+		.attr("font-weight","bold");
 texthint2.append("tspan")
 		.attr("x","50%")
 		.attr("class", "value")
-		.attr("dy", 40)
-		.text("world");
+		.attr("dy", 50);
 
 					
 var stylepre = null;
@@ -84,21 +84,19 @@ d3.json("flare.json", function(error, root) {
       .each(stash);
 
 	path.on("mouseover", function(d,i){
-		console.log(d);
 		// 文字提示
 		texthint2.selectAll(".name").text(d.name);
 		texthint2.selectAll(".value").text(d.value.toFixed(1));
 		stylepre = d3.select(this)
 			.attr("style")
-		console.log(stylepre)
 		var res = stylepre + "stroke: rgb(0,0,0); fill: rgb(0,0,0)"
 		d3.select(this).attr("style", res)
 	})
 	.on("mouseout", function(){
 		d3.select(this).attr("style", stylepre)
 		// 文字提示
-//		texthint2.selectAll(".name").text("");
-//		texthint2.selectAll(".value").text("");
+		texthint2.selectAll(".name").text("");
+		texthint2.selectAll(".value").text("");
 	})
 /*
   d3.selectAll("input").on("change", function change() {
