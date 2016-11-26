@@ -9,11 +9,11 @@
 					"children": [
 						{
 							"name": "CeA",
-							"size": 0.8147
+							"size": 4.58
 						},
 						{
-							"name": "Mep",
-							"size": 0.9058
+							"name": "MeP",
+							"size": 13.61
 						}
 					]
 				}
@@ -23,40 +23,53 @@
 			"name": "Cerebral Cortex",
 			"children": [
 				{
-					"name": "APF",
+					"name": "HPF",
 					"children": [
 						{
 							"name": "ENT",
-							"size": 3.8824
+							"size": 1
+						},
+						{
+							"name": "CA",
+							"size": 1.98
 						},
 						{
 							"name": "SUB",
-							"size": 0.6305
-						},
-						{
-							"name": "_gap_",
-							"size": 0.6305
+							"size": 5.25
 						}
 					]
 				},
 				{
-					"name": "cortical subplate",
-					"size": 5
-				},
-				{
-					"name": "Dlfactory Areas",
+					"name": "CTXsp",
 					"children": [
 						{
-							"name": "coA",
-							"size": 1.915
+							"name": "BLA",
+							"size": 1.83
+						},
+						{
+							"name": "BMA",
+							"size": 4.15
+						},
+						{
+							"name": "BLP",
+							"size": 1.83
+						}
+					]
+				},
+				{
+					"name": "Olfactory Areas",
+					"children": [
+						{
+							"name": "COA",
+							"size": 9.44
 						},
 						{
 							"name": "DP",
-							"size": 1.0938
+							"size": 0.24
 						},
 						{
 							"name": "TR",
-							"size": 1.9298
+							"size": 3.25
 						}
 					]
 				},
@@ -65,89 +78,118 @@
 					"children": [
 						{
 							"name": "AI",
-							"size": 0.557
+							"size": 0.11
 						},
 						{
 							"name": "DTT",
-							"size": 0.1951
+							"size": 0.56
 						},
 						{
 							"name": "IL",
-							"size": 0.9134
+							"size": 0.06
 						},
 						{
 							"name": "MO",
-							"size": 0.6324
+							"size": 1.08
 						},
 						{
-							"name": "prl",
-							"size": 0.127
+							"name": "PrL",
+							"size": 0.47
 						}
 					]
 				}
 			]
 		},
 		{
-			"name": "Brach stem",
+			"name": "Brain stem",
 			"children": [
 				{
 					"name": "Hypo-Thalamus",
 					"children": [
 						{
 							"name": "AH",
-							"size": 0.8491
+							"size": 6.55
 						},
 						{
 							"name": "ARH",
-							"size": 0.6787
+							"size": 0.48
 						},
 						{
 							"name": "LH",
-							"size": 0.0357
+							"size": 10.95
 						},
 						{
 							"name": "PH",
-							"size": 0.934
+							"size": 1.98
 						},
 						{
 							"name": "PM",
-							"size": 6.0619
+							"size": 1.73
 						},
 						{
-							"name": "PMH",
-							"size": 0.1273
+							"name": "DMH",
+							"size": 1.93
 						},
 						{
 							"name": "PSTh",
-							"size": 0.1847
+							"size": 0.83
 						},
 						{
 							"name": "PVp",
-							"size": 0.3885
+							"size": 2.45
 						},
 						{
 							"name": "RCH",
-							"size": 5.2438
+							"size": 2.34
 						},
 						{
 							"name": "SBPV",
-							"size": 5.9451
+							"size": 2.28
 						},
 						{
 							"name": "SCH",
-							"size": 3.1378
+							"size": 1.47
 						},
 						{
 							"name": "Tu",
-							"size": 1.1077
+							"size": 3.08
 						},
 						{
 							"name": "VMH",
-							"size": 2.8242
+							"size": 2.88
 						},
 						{
 							"name": "ZI",
-							"size": 0.6557
+							"size": 1.86
+						}
+					]
+				},
+				{
+					"name": "Thal",
+					"children": [
+						{
+							"name": "CM",
+							"size": 0.21
+						},
+						{
+							"name": "IMD",
+							"size": 0.44
+						},
+						{
+							"name": "IAM",
+							"size": 0.17
+						},
+						{
+							"name": "PVH",
+							"size": 0.74
+						},
+						{
+							"name": "PVT",
+							"size": 2.76
+						},
+						{
+							"name": "Re",
+							"size": 2.78
 						}
 					]
 				},
@@ -156,24 +198,19 @@
 					"children": [
 						{
 							"name": "DR",
-							"size": 0.6948
+							"size": 0.13
+						},
+						{
+							"name": "VTA",
+							"size": 0.44
 						},
 						{
 							"name": "PAG",
-							"size": 0.3171
+							"size": 0.6
 						},
 						{
 							"name": "PPN",
-							"size": 0.8235
-						}
-					]
-				},
-				{
-					"name": "Medulla",
-					"children": [
-						{
-							"name": "My-sat",
-							"size": 2.8242
+							"size": 0.34
 						}
 					]
 				},
@@ -182,40 +219,24 @@
 					"children": [
 						{
 							"name": "CS",
-							"size": 5.2438
+							"size": 0.09
 						},
 						{
 							"name": "PB",
-							"size": 0.0344
+							"size": 0.77
 						},
 						{
 							"name": "PCG",
-							"size": 0.9502
+							"size": 0.25
 						}
 					]
 				},
 				{
-					"name": "thal",
+					"name": "Medulla",
 					"children": [
 						{
-							"name": "CM",
-							"size": 1.5844
-						},
-						{
-							"name": "IAM",
-							"size": 1.8315
-						},
-						{
-							"name": "PVH",
-							"size": 0.2838
-						},
-						{
-							"name": "PVT",
-							"size": 1.919
-						},
-						{
-							"name": "Re",
-							"size": 0.8435
+							"name": "MY-sat",
+							"size": 0.02
 						}
 					]
 				}

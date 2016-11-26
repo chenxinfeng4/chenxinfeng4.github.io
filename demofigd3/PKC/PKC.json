@@ -1,0 +1,246 @@
+{
+	"name": "root",
+	"children": [
+		{
+			"name": "Cerebral Nuclei",
+			"children": [
+				{
+					"name": "striatum",
+					"children": [
+						{
+							"name": "CeA",
+							"size": 11.84
+						},
+						{
+							"name": "MeP",
+							"size": 4.78
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cerebral Cortex",
+			"children": [
+				{
+					"name": "HPF",
+					"children": [
+						{
+							"name": "ENT",
+							"size": 4.34
+						},
+						{
+							"name": "CA",
+							"size": 1.03
+						},
+						{
+							"name": "SUB",
+							"size": 3.81
+						}
+					]
+				},
+				{
+					"name": "CTXsp",
+					"children": [
+						{
+							"name": "BLA",
+							"size": 2.8
+						},
+						{
+							"name": "BMA",
+							"size": 2.62
+						},
+						{
+							"name": "BLP",
+							"size": 4.84
+						}
+					]
+				},
+				{
+					"name": "Olfactory Areas",
+					"children": [
+						{
+							"name": "COA",
+							"size": 2.05
+						},
+						{
+							"name": "DP",
+							"size": 0.21
+						},
+						{
+							"name": "TR",
+							"size": 10.9
+						}
+					]
+				},
+				{
+					"name": "Isocortex",
+					"children": [
+						{
+							"name": "AI",
+							"size": 1.43
+						},
+						{
+							"name": "DTT",
+							"size": 0.97
+						},
+						{
+							"name": "IL",
+							"size": 0.28
+						},
+						{
+							"name": "MO",
+							"size": 0.53
+						},
+						{
+							"name": "PrL",
+							"size": 0.34
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Brain stem",
+			"children": [
+				{
+					"name": "Hypo-Thalamus",
+					"children": [
+						{
+							"name": "AH",
+							"size": 4.11
+						},
+						{
+							"name": "ARH",
+							"size": 0.83
+						},
+						{
+							"name": "LH",
+							"size": 9.26
+						},
+						{
+							"name": "PH",
+							"size": 1.3
+						},
+						{
+							"name": "PM",
+							"size": 1.55
+						},
+						{
+							"name": "DMH",
+							"size": 1.24
+						},
+						{
+							"name": "PSTh",
+							"size": 1.65
+						},
+						{
+							"name": "PVp",
+							"size": 2.3
+						},
+						{
+							"name": "RCH",
+							"size": 0.83
+						},
+						{
+							"name": "SBPV",
+							"size": 1.08
+						},
+						{
+							"name": "SCH",
+							"size": 0.56
+						},
+						{
+							"name": "Tu",
+							"size": 4.1
+						},
+						{
+							"name": "VMH",
+							"size": 1.37
+						},
+						{
+							"name": "ZI",
+							"size": 1.57
+						}
+					]
+				},
+				{
+					"name": "Thal",
+					"children": [
+						{
+							"name": "CM",
+							"size": 0.73
+						},
+						{
+							"name": "IMD",
+							"size": 0.16
+						},
+						{
+							"name": "IAM",
+							"size": 0.33
+						},
+						{
+							"name": "PVH",
+							"size": 0.75
+						},
+						{
+							"name": "PVT",
+							"size": 7.22
+						},
+						{
+							"name": "Re",
+							"size": 2.52
+						}
+					]
+				},
+				{
+					"name": "MB",
+					"children": [
+						{
+							"name": "DR",
+							"size": 0.32
+						},
+						{
+							"name": "VTA",
+							"size": 0.32
+						},
+						{
+							"name": "PAG",
+							"size": 0.7
+						},
+						{
+							"name": "PPN",
+							"size": 0.44
+						}
+					]
+				},
+				{
+					"name": "Pons",
+					"children": [
+						{
+							"name": "CS",
+							"size": 2.73
+						},
+						{
+							"name": "PB",
+							"size": 1.5
+						},
+						{
+							"name": "PCG",
+							"size": 0.24
+						}
+					]
+				},
+				{
+					"name": "Medulla",
+					"children": [
+						{
+							"name": "MY-sat",
+							"size": 0.17
+						}
+					]
+				}
+			]
+		}
+	]
+}
